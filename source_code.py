@@ -83,7 +83,7 @@ def password_policies(username, user_input):
     password_policy = [lambda user_input: len(user_input) >= 10,
                        lambda user_input: len(user_input) <= 35,
                        lambda user_input: not (username in user_input),
-                       lambda char: (char in special_chars, user_input),
+                       lambda char: any(char in special_chars for char in user_input),
                        lambda user_input: any(char.isdigit()
                                               for char in user_input),
                        lambda user_input: any(char.islower()
