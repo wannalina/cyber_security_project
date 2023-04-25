@@ -48,30 +48,25 @@ def clearText(textboxName):
 
 # function to verify length to fit database requirements and uniqueness of username to eliminate duplicate values
 def unique_username(user_input):
-    
-    if len(user_input) >= 20:
-        showerror(
-            'Notification!', 'The password you entered is too long!\n Please enter a new pasword')
-        return False
-    
-    elif len(user_input) < 20:
-        try:
-            
-            # check whether username already in use in database
-            sql = "SELECT COUNT(username) FROM users WHERE username = '{user_input}';"
-            cur.execute(sql)
-            result = cur.fetchone()
-            
-            if result[0] == 0:
-                return True
-
-            else: 
-                showerror(
-                'Notification!', 'This usernmame is already in use!\n Please enter a new pasword')
-                return False
+    try:
+        # check whether username already in use in database
         
-        except Exception:
-            return False
+        
+        sql = "SELECT COUNT(username) FROM users WHERE username = '" + user_input + "';"
+        
+        cur.execute(sql)
+        result = cur.fetchone()
+        
+        if result[0] == 0:
+            return True
+
+        else: 
+            showerror(
+            'Notification!', 'This usernmame is already in use!\n Please enter a new username')
+            return False 
+    
+    except Exception:
+        return False
 
 
 # function to compare the user's entered password against the password policies
