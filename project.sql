@@ -1,4 +1,4 @@
 CREATE TABLE USERS(
 userName 			CHAR(20)  NOT NULL  PRIMARY KEY, 
-userPassword  		CHARACTER VARYING  NOT NULL  	  
+userPassword  		VARCHAR  NOT NULL  	  
 );
