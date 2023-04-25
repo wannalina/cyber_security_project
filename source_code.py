@@ -133,7 +133,7 @@ class mainMenu(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-        # mainMenu picture
+         # mainMenu picture
         self.canvas = tkinter.Canvas(self, height=550, width=500)
         self.image_file = tkinter.PhotoImage(file='2.gif')
         self.image = self.canvas.create_image(
@@ -142,14 +142,14 @@ class mainMenu(tk.Frame):
 
         # label the page
         title = tk.Label(self, text='Welcome to Our ExpressYourself',
-                         font=('Times New Roman', 25, "bold italic"))
+                         font=('Times New Roman', 20, "bold italic"))
         title.pack()
-        title.place(x=79, y=320)
+        title.place(x=60, y=320)
 
         slogan = tk.Label(self, text='Your Thoughts Matter with ExpressYourself',
-                          font=('Times New Roman', 12, "bold italic"))
+                          font=('Times New Roman', 9, "bold italic"))
         slogan.pack()
-        slogan.place(x=135, y=350)
+        slogan.place(x=130, y=350)
 
         # create button
         button1 = tk.Button(self, text="Explore More", width=12, height=2,
@@ -158,7 +158,7 @@ class mainMenu(tk.Frame):
 
         # style and place of the button
         button1.pack()
-        button1.place(x=170, y=380)
+        button1.place(x=200, y=380)
 
 
 class login(tk.Frame):
@@ -172,27 +172,27 @@ class login(tk.Frame):
         self.image = self.canvas.create_image(
             0, 0, anchor='nw', image=self.image_file)
         self.canvas.pack()
-        self.canvas.place(x=75, y=0)
+        self.canvas.place(x=0, y=0)
 
         # create id label
-        id_label = tk.Label(self, text="Enter your ID:")
+        id_label = tk.Label(self, text="Enter your User Name: ")
         id_label.pack()
-        id_label.place(x=55, y=290)
+        id_label.place(x=65, y=240)
 
         # create id entry
         id_entry = tk.Entry(self, width=25)
         id_entry.pack()
-        id_entry.place(x=165, y=290)
+        id_entry.place(x=200, y=240)
 
         # create password label
-        password_label = tk.Label(self, text="Password:")
+        password_label = tk.Label(self, text="Password: ")
         password_label.pack()
-        password_label.place(x=55, y=310)
+        password_label.place(x=65, y=270)
 
         # create password entry
         password_entry = tk.Entry(self, width=25, show="*")
         password_entry.pack()
-        password_entry.place(x=165, y=310)
+        password_entry.place(x=200, y=270)
 
         def message():
             # window successfully logged
@@ -224,19 +224,19 @@ class login(tk.Frame):
         button1 = tk.Button(self, text="LOGIN", width=12, height=2,
                             command=message)
         button1.pack()
-        button1.place(x=30, y=350)
+        button1.place(x=55, y=330)
 
         # create sign up button
         button2 = tk.Button(self, text="SIGN UP", width=12, height=2,
                             command=lambda: controller.show_frame(signButton))
         button2.pack()
-        button2.place(x=170, y=350)
+        button2.place(x=210, y=330)
 
         # create return button
         button3 = tk.Button(self, text="RETURN HOME", width=12, height=2,
                             command=lambda: controller.show_frame(mainMenu))
         button3.pack()
-        button3.place(x=310, y=350)
+        button3.place(x=360, y=330)
 
 
 class signButton(tk.Frame):
@@ -245,28 +245,28 @@ class signButton(tk.Frame):
         # Name
         label = tk.Label(self, text="Sign up with new account",
                          font=('Times New Roman', 20, "bold italic"))
-        label.place(x=75, y=30)
+        label.place(x=55, y=20)
         label.pack(pady=20, padx=10)
 
         # create id label
         id_label = tk.Label(self, text="Enter your ID:")
         id_label.pack()
-        id_label.place(x=55, y=70)
+        id_label.place(x=95, y=90)
 
         # create id entry
         id_entry = tk.Entry(self, width=25)
         id_entry.pack()
-        id_entry.place(x=165, y=70)
+        id_entry.place(x=205, y=90)
 
         # create password label
         password_label = tk.Label(self, text="Password:")
         password_label.pack()
-        password_label.place(x=55, y=100)
+        password_label.place(x=95, y=120)
 
         # create password entry
         password_entry = tk.Entry(self, width=25, show="*")
         password_entry.pack()
-        password_entry.place(x=165, y=100)
+        password_entry.place(x=205, y=120)
 
         def message():
             if not unique_username(id_entry.get()): # check if username already in database
