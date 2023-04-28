@@ -8,7 +8,7 @@ from PIL import ImageTk, Image
 import psycopg2
 import bcrypt # Library for hashing
 import string
-import base64 # Library for encryption
+import base64 # Library for encoding
 
 # connection to the database
 # put the database name and the password here
